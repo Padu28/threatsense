@@ -8,7 +8,7 @@ Analyses network-flow records, flags unusual traffic, prioritises suspicious eve
 evaluated honestly under heavy class imbalance.</p>
 
 <p align="center">
-  <a href="https://github.com/YOUR-GITHUB-USERNAME/threatsense/actions/workflows/ci.yml"><img src="https://github.com/YOUR-GITHUB-USERNAME/threatsense/actions/workflows/ci.yml/badge.svg" alt="CI"/></a>
+  <a href="https://github.com/Padu28/threatsense/actions/workflows/ci.yml"><img src="https://github.com/Padu28/threatsense/actions/workflows/ci.yml/badge.svg" alt="CI"/></a>
   <img src="https://img.shields.io/badge/python-3.11%20|%203.12-3776AB?logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/scikit--learn-1.6+-F7931E?logo=scikitlearn&logoColor=white" alt="scikit-learn"/>
   <img src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" alt="FastAPI"/>
@@ -89,7 +89,7 @@ evaluated honestly under heavy class imbalance.</p>
 <summary><b>Windows (PowerShell)</b></summary>
 
 ```powershell
-git clone https://github.com/YOUR-GITHUB-USERNAME/threatsense.git
+git clone https://github.com/Padu28/threatsense.git
 cd threatsense
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -104,7 +104,7 @@ streamlit run dashboard/app.py --server.port 8502      # → http://localhost:85
 <summary><b>macOS / Linux</b></summary>
 
 ```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/threatsense.git && cd threatsense
+git clone https://github.com/Padu28/threatsense.git && cd threatsense
 python3.12 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt && pip install -e .
 python -m threatsense.cli pipeline
@@ -190,11 +190,11 @@ calibration, explanations, streaming order, API. CI also runs the full pipeline 
 ## 🔗 Related projects
 | Project | Focus |
 |---|---|
-| 🛰️ [SentinelML](https://github.com/YOUR-GITHUB-USERNAME/sentinelml) | Drift monitoring & adaptive retraining |
-| 🔬 [VisionGuard AI](https://github.com/YOUR-GITHUB-USERNAME/visionguard-ai) | Robust visual defect inspection |
-| 🩺 [MedPredict Research](https://github.com/YOUR-GITHUB-USERNAME/medpredict-research) | Calibrated, fair clinical risk models |
+| 🛰️ [SentinelML](https://github.com/Padu28/sentinelml) | Drift monitoring & adaptive retraining |
+| 🔬 [VisionGuard AI](https://github.com/Padu28/visionguard-ai) | Robust visual defect inspection |
+| 🩺 [MedPredict Research](https://github.com/Padu28/medpredict-research) | Calibrated, fair clinical risk models |
 
 ## 👤 Author
-**Padmashree Shah** · [GitHub](https://github.com/YOUR-GITHUB-USERNAME) · [LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN)
+**Padmashree Shah** · [GitHub](https://github.com/Padu28)
 
 <sub>MIT licensed · defensive research prototype · not affiliated with or endorsed by Microsoft.</sub>

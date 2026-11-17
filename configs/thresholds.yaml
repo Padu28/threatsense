@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------
+# ThreatSense — detection, scoring & threshold policy
+# ---------------------------------------------------------------
+random_state: 42
+
+threshold_policy:
+  # Thresholds are selected on the VALIDATION window and frozen before testing:
+  # maximise recall subject to a false-positive-rate budget.
+  max_fpr: 0.01
+  # Statistical baseline: alert when any robust z-score exceeds this value
+  zscore_threshold: 6.0
+
+isolation_forest:
+  n_estimators: 300
+  contamination: auto
+  max_samples: 2048
+
+supervised:
+  logistic_regression: {C: 0.5, max_iter: 2000, class_weight: balanced}
+  random_forest: {n_estimators: 300, max_depth: 14, min_samples_leaf: 2, class_weight: balanced_subsample, n_jobs: -1}
+  hist_gradient_boosting: {max_iter: 300, learning_rate: 0.08, class_weight: balanced}
+
+hybrid:
+  # risk = w * calibrated supervised probability + (1 - w) * anomaly percentile
+  supervised_weight: 0.7
+  primary_model: random_forest
+
+priority_bands:           # risk score → analyst priority (not certainty)
+  critical: 0.90
+  high: 0.75
+  medium: 0.50
+
+streaming:
+  window_minutes: 5
+
+storage:
+  database: data/processed/threatsense.db
+  reports_dir: reports
+  models_dir: models

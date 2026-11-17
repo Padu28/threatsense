@@ -1,0 +1,28 @@
+# ---------------------------------------------------------------
+# ThreatSense — dataset configuration
+# ---------------------------------------------------------------
+# Default: synthetic network-flow capture (clearly labelled synthetic) for a
+# reproducible demo. Switch to `cicids2017` after downloading the CSVs into
+# data/raw/ (see docs/DATA_CARD.md for the column mapping).
+source: synthetic        # synthetic | cicids2017
+raw_dir: data/raw
+
+synthetic:
+  n_benign: 42000
+  hours: 48
+  seed: 42
+  # Attack campaigns: start hour, duration (min), flows
+  campaigns:
+    dos:          [[3, 20, 900], [20, 15, 700], [33, 20, 800], [41, 15, 700]]
+    portscan:     [[6, 6, 500], [24, 5, 450], [35, 5, 400], [44, 5, 450]]
+    bruteforce:   [[9, 40, 300], [26, 35, 260], [31, 30, 240], [46, 30, 260]]
+    exfiltration: [[45, 60, 120]]          # appears ONLY in the test window (novel attack)
+  botnet: {hosts: 2, start_hour: 10, beacon_seconds: 90}
+
+split:                   # time-aware split (fractions of the capture period)
+  train: 0.6
+  validation: 0.2        # thresholds are chosen here and frozen
+  test: 0.2
+
+target: is_attack
+category_col: category
